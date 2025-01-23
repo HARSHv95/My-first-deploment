@@ -3,7 +3,8 @@ const path = require('path');
 
 const storage = multer.diskStorage({
     destination : function(req, file, cb){
-        cb(null, '/Web-Development/NodeJs/Authe-Autho-1/uploads')
+        const uploadPath = path.join(__dirname,'..','tmp');
+        cb(null,uploadPath);
     },
     filename : function(req, file,cb){
         cb(null,
